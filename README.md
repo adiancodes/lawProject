@@ -6,7 +6,7 @@ An academic machine learning project that classifies everyday legal problems des
 
 ## Overview
 
-People often encounter legal problems — a landlord who refuses to return a deposit, a phone snatched on the street, an employer withholding salary — but have no easy way to understand which area of law applies or where to begin. This project attempts to bridge that gap in a rudimentary way.
+People often encounter legal problems say, a landlord who refuses to return a deposit, a phone snatched on the street, an employer withholding salary say, but have no easy way to understand which area of law applies or where to begin. This project attempts to bridge that gap in a rudimentary way.
 
 The system takes a user's description of their situation, runs it through a trained text classification model, and returns the legal category it falls under along with a plain-language explanation of the relevant law and a practical first step.
 
