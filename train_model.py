@@ -50,9 +50,9 @@ assert "Legal_Category" in df.columns, "Missing column: Legal_Category"
 # Drop any rows where either column is NaN
 df.dropna(subset=["User_Scenario", "Legal_Category"], inplace=True)
 
-print(f"\n✅  Dataset loaded successfully.")
-print(f"    Total samples : {len(df)}")
-print(f"    Categories    : {sorted(df['Legal_Category'].unique())}\n")
+print(f"\n[OK]  Dataset loaded successfully.")
+print(f"      Total samples : {len(df)}")
+print(f"      Categories    : {sorted(df['Legal_Category'].unique())}\n")
 
 # ─────────────────────────────────────────────
 # 2.  TRAIN / TEST SPLIT  (80 / 20, stratified)
@@ -67,9 +67,9 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y          # preserve class distribution in both splits
 )
 
-print(f"✅  Data split complete.")
-print(f"    Training samples : {len(X_train)}")
-print(f"    Testing  samples : {len(X_test)}\n")
+print(f"[OK]  Data split complete.")
+print(f"      Training samples : {len(X_train)}")
+print(f"      Testing  samples : {len(X_test)}\n")
 
 # ─────────────────────────────────────────────
 # 3.  TF-IDF VECTORISATION  (unigrams + bigrams)
@@ -88,8 +88,8 @@ vectorizer = TfidfVectorizer(
 X_train_vec = vectorizer.fit_transform(X_train)
 X_test_vec  = vectorizer.transform(X_test)
 
-print(f"✅  TF-IDF vectorisation complete.")
-print(f"    Vocabulary size : {len(vectorizer.vocabulary_):,}  "
+print(f"[OK]  TF-IDF vectorisation complete.")
+print(f"      Vocabulary size : {len(vectorizer.vocabulary_):,}  "
       f"(unigrams + bigrams)\n")
 
 # ─────────────────────────────────────────────
@@ -129,7 +129,7 @@ grid_search = GridSearchCV(
 )
 
 n_combos = len(param_grid["C"]) * len(param_grid["kernel"])
-print(f"⏳  Starting GridSearchCV …")
+print(f"[*]  Starting GridSearchCV ...")
 print(f"    Parameter combinations : {n_combos}  "
       f"({len(param_grid['C'])} C values × {len(param_grid['kernel'])} kernels)")
 print(f"    Folds per combination  : 5")
@@ -139,7 +139,7 @@ t_start = time.time()
 grid_search.fit(X_train_vec, y_train)
 elapsed = time.time() - t_start
 
-print(f"\n✅  Grid search complete in {elapsed:.1f}s.\n")
+print(f"\n[OK]  Grid search complete in {elapsed:.1f}s.\n")
 
 # ─────────────────────────────────────────────
 # PRINT BEST HYPERPARAMETERS
@@ -196,6 +196,6 @@ VECTORIZER_PATH = "vectorizer.pkl"
 joblib.dump(best_model, MODEL_PATH)
 joblib.dump(vectorizer, VECTORIZER_PATH)
 
-print(f"✅  Best model saved      → {MODEL_PATH}")
-print(f"✅  Vectorizer saved      → {VECTORIZER_PATH}")
-print("\n🎉  Done!  The Streamlit app will automatically use the new model.\n")
+print(f"[OK]  Best model saved      -> {MODEL_PATH}")
+print(f"[OK]  Vectorizer saved      -> {VECTORIZER_PATH}")
+print("\nDone. The Streamlit app will automatically use the new model.\n")
