@@ -3,8 +3,14 @@
 An academic machine learning project that classifies everyday legal problems described in plain language and returns the relevant statute and a suggested course of action. The project is built entirely in Python and deployed as a web application using Streamlit.
 
 ---
+The Screenshots of the WebApp:
+
 <img width="1580" height="962" alt="Screenshot 2026-04-21 142755" src="https://github.com/user-attachments/assets/fe35d214-4a0f-4909-a06f-f8f87b7b45c3" />
+
+
 <img width="1861" height="964" alt="Screenshot 2026-04-21 142448" src="https://github.com/user-attachments/assets/7b210c63-210f-4605-9e94-1c40c27d0cc4" />
+
+
 <img width="1864" height="961" alt="Screenshot 2026-04-21 142833" src="https://github.com/user-attachments/assets/84b35fba-2491-4318-8d08-e92478eff89a" />
 
 ## Overview
